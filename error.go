@@ -78,6 +78,7 @@ func (e *Error[T]) GetTags() []string {
 	return e.tags.Values()
 }
 
+// TODO: see comm [Structured Errors in Go](https://news.ycombinator.com/item?id=44148734)
 func (e *Error[T]) With(k string, v any) *Error[T] {
 	e.data[k] = v
 	return e
